@@ -39,16 +39,21 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="<?= base_url () . 'admin/'; ?>">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Help</a></li>
-            <li><a href="<?= base_url() . 'shop/'; ?>" target="_blank">Public Site</a></li>
+            <li><a style="color: red;" href="<?= base_url () . 'admin/'; ?>"><i class="fa fa-tachometer" aria-hidden="true"></i>
+ Dashboard</a></li>
+            <li><a style="color: green;" href="#"><i class="fa fa-wrench" aria-hidden="true"></i>
+ Settings</a></li>
+            <li><a style="color: blue;" href="#"><i class="fa fa-info-circle" aria-hidden="true"></i>
+ Help</a></li>
+            <li><a style="color: orange;" href="<?= base_url() . 'shop/'; ?>" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i>
+ Public Site</a></li>
             <li class="dropdown">
-              <a href="#" data-toggle="dropdown">Account
+              <a style="color: violet;" href="#" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i>
+ Account
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
-                <li><a href="#">My Profile</a></li>
-                <li><a href="<?= base_url() . 'admin_login/logout'; ?>">Logout</a></li>
+                <li><a href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> My Profile</a></li>
+                <li><a href="<?= base_url() . 'admin_login/logout'; ?>"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
               </ul>
             </li>
           </ul>
