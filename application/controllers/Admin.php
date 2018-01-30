@@ -36,6 +36,13 @@ class Admin extends CI_Controller{
 		$this->load->view('admin_includes/template', $data);
 	}
 
+	public function customer($id){
+		$data['title'] = 'View Customer';
+		$data['main_content'] = 'admin_views/customer_view';
+		$data['query'] = $this->admin_model->get_where('customers', 'c_id', $id);
+		$this->load->view('admin_includes/template', $data);
+	}
+
 
 	// **************************** CATEGORIES ROUTES
 	public function categories(){

@@ -21,7 +21,7 @@
       <td><?= $row->c_address1 . ' ' . $row->c_address2 . ',' .$row->c_city; ?></td>
       <td><?= $row->c_email_address; ?></td>
       <td><?= $row->c_username; ?></td>
-      <td><a href="#" class="btn btn-info btn-lg">View More</a></td>
+      <td><a href="<?= base_url() . 'admin/customer/'.$row->c_id; ?>" class="btn btn-info btn-lg">View More</a></td>
       <td><button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#viewCustomer">Open Modal</button></td>
     </tr>
 <?php endforeach; ?>

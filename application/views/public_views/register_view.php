@@ -32,7 +32,7 @@
 					<div class="form-group">
 						<label for="landlinenum" class="col-md-3 col-sm-4 control-label">Landline Number</label>
 						<div class="col-md-9 col-sm-8">
-							<input type="password" name="landlinenum" id="landlinenum" class="form-control" placeholder="+02 xxx-xx-xx">
+							<input type="text" name="landlinenum" id="landlinenum" class="form-control" placeholder="+02 xxx-xx-xx">
 						</div>
 					</div>
 					<h3 class="text-primary">Billing Address</h3>
