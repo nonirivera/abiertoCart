@@ -64,12 +64,9 @@ function clear_cart(){
 					    <tr>
 					    	<?php $grand_total = $grand_total + $item['subtotal']; ?>
 					    	<td colspan="2"><strong>Order Total: P <?= number_format($this->cart->total(),2) ?></strong></td>
-					    	<td>&nbsp;</td>
-					    	<td>&nbsp;</td>
-					    	<td>
-					    		<a href="#" class="btn btn-default"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Continue Shopping</a> 
-					    		<button class="btn btn-default" type="submit"><i class="fa fa-cart-plus" aria-hidden="true"></i> Update Cart</button> 
-					    		<button class="btn btn-default" type="button" onclick="clear_cart()"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Clear Cart</button>
+					    	<td><a href="<?= base_url() . 'shop/'; ?>" class="btn btn-default"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Continue Shopping</a> </td>
+					    	<td><button class="btn btn-info" type="submit"><i class="fa fa-cart-plus" aria-hidden="true"></i> Update Cart</button> </td>
+					    	<td><button class="btn btn-warning" type="button" onclick="clear_cart()"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Clear Cart</button>
 					    	</td>
 					    </tr>
 					  </tbody>
@@ -83,8 +80,18 @@ function clear_cart(){
 			?>
 			<?php else: ?>
 			<div align="center">
+				<div class="panel panel-success">
+				  <div class="panel-heading">
+				    <h3 class="panel-title">Cart Summary</h3>
+				  </div>
+				  <div class="panel-body">
+				    <p>Click on <b><u>X</u></b> button on product(s) that you wish to remove from your cart</p>
+				    <p>You may change the quantity for each product that you wish to update</p>
+				    <p>To proceed, just click on <b><u>CONTINUE TO BILLING</u></b> button</p>
+				  </div>
+				</div>
 				<!-- <button class="btn btn-primary btn-block btn-lg">Place Order</button> -->
-				<a href="<?= base_url() . 'billing/'; ?>" class="btn btn-primary btn-block btn-lg"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Continue to Billing</a>
+				<a href="<?= base_url() . 'billing/'; ?>" class="btn btn-primary btn-lg"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Continue to Billing</a>
 			</div>
 			<?php endif; ?>
 		</div>

@@ -9,6 +9,7 @@ class Invoice extends CI_Controller{
 		$this->load->model('customer_model');
 		$this->load->library('cart');
 		$this->load->model('store_model');
+		$this->load->model('admin_model');
 	}
 
 	public function invoice($id){
@@ -20,10 +21,14 @@ class Invoice extends CI_Controller{
 	}
 
 	public function view($id){
-		// $data['orders'] = $this->store_model->get_where('orders', 'order_customer_username', $uname);
-		// $data['accountdetails'] = $this->store_model->get_where('customers','c_username', $uname);
+		//$data['orders'] = $this->store_model->get_list('order_detail', 'orderid', $id);
+		$data['accountdetails'] = $this->store_model->get_where('customers','c_username', $this->session->userdata('username'));
 		$data['order_invoice'] = $this->store_model->get_where('orders', 'serialnum', $id);
+
+		//get products
+		$data['prods'] = $this->admin_model->get_order('order_detail', 'products', 'order_detail.productid', 'products.product_id', $id, 'order_detail.orderid');
 		$this->load->view('public_views/invoice_view', $data);
+		//$this->load->view('welcome_message');
 		/* convert to pdf */
 		$html = $this->output->get_output();
 		

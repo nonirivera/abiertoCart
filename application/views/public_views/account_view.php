@@ -51,8 +51,9 @@
               <div class="panel-body">
               <div id="the-message"></div>
 
-              <?php echo form_open("customers/save", array("id" => "form-user", "class" => "form-horizontal")) ?>
+              <?php echo form_open("customers/accountUpdate", array("id" => "form-user", "class" => "form-horizontal")) ?>
               <?php foreach($accountdetails as $account): ?>
+                <input type="hidden" name="c_id" value="<?=$account->c_id; ?>">
                 <h3 class="text-primary">Personal Details</h3>
                 <hr>
                 <div class="form-group">
@@ -104,33 +105,7 @@
                   <div class="col-md-9 col-sm-8">
                     <input type="text" name="postalcode" id="postalcode" class="form-control" placeholder="xxxx" value="<?= $account->c_postal_code; ?>" readonly="true">
                   </div>
-                </div>
-                <h3 class="text-primary">Login Details</h3>
-                <hr>
-                <div class="form-group">
-                  <label for="emailaddress" class="col-md-3 col-sm-4 control-label">Email Address</label>
-                  <div class="col-md-9 col-sm-8">
-                    <input type="text" name="emailaddress" id="emailaddress" class="form-control" placeholder="xxxxxxxx@site.com" value="<?= $account->c_email_address; ?>" readonly="true">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="c_username" class="col-md-3 col-sm-4 control-label">Username</label>
-                  <div class="col-md-9 col-sm-8">
-                    <input type="text" name="c_username" id="c_username" class="form-control" value="<?= $account->c_username; ?>" readonly="true">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="c_password" class="col-md-3 col-sm-4 control-label">Password</label>
-                  <div class="col-md-9 col-sm-8">
-                    <input type="password" name="c_password" id="c_password" class="form-control" placeholder="xxxxxxxx" value="<?= $account->c_password; ?>" readonly="true">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="cpassword" class="col-md-3 col-sm-4 control-label">Confirm Password</label>
-                  <div class="col-md-9 col-sm-8">
-                    <input type="password" name="cpassword" id="cpassword" class="form-control" placeholder="xxxxxxxx" readonly="true">
-                  </div>
-                </div>          
+                </div>      
                 <div class="form-group">
                   <div class="col-md-offset-3 col-md-3 col-sm-offset-4 col-sm-4">
                     <button type="submit" class="btn btn-lg btn-primary pull-right" id="regiBtn"><i class="fa fa-user-plus" aria-hidden="true"></i> SAVE</button>
@@ -150,4 +125,41 @@
   $('.form-control').click(function(){
     $('.form-control').prop('readonly', false);
   });
+
+$('#form-user').submit(function(e) {
+
+  var me = $(this);
+
+  $.ajax({
+    url: me.attr('action'),
+    type: 'post',
+    data: me.serialize(),
+    dataType: 'json',
+    success: function(response) {
+      if (response.success == true) {
+        // show success message, remove error class, and disable form inputs
+        $('#the-message').append('<div class="alert alert-success">Your profile has been updated!</div>');
+        $('.form-group').removeClass('has-error')
+                .removeClass('has-success');
+        $('.text-danger').remove();
+        $("#form-user input").prop("disabled", true);
+        $("#form-user #regiBtn").prop("disabled", true);
+      }
+      else {
+        $.each(response.messages, function(key, value) {
+          var element = $('#' + key);
+          
+          element.closest('div.form-group')
+          .removeClass('has-error')
+          .addClass(value.length > 0 ? 'has-error' : 'has-success')
+          .find('.text-danger')
+          .remove();
+          
+          element.after(value);
+        });
+      }
+    }
+  });
+  return false;
+});  
 </script>

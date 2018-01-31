@@ -1,8 +1,5 @@
 <div class="container">
-	<p class="lead">Your order has been successfully submitted!</p>
-	<div class="progress progress-striped active">
-	  <div class="progress-bar" style="width: 100%"></div>
-	</div>
+	<p class="lead">Your order has been successfully submitted! <i class="fa fa-check" aria-hidden="true" style="color: red;"></i></p>
 
 	<div class="jumbotron">
 		<h2>What's Next?</h2>

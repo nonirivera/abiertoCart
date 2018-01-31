@@ -13,17 +13,17 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="https://demo.opencart.com/image/cache/catalog/demo/banners/MacBookAir-1140x380.jpg" alt="Chania" id="carouselimg">
+      <img src="<?= base_url() . 'assets/images/samsung-banner.jpg'; ?>" alt="Samsung" id="carouselimg">
       
     </div>
 
     <div class="item">
-      <img src="https://demo.opencart.com/image/cache/catalog/demo/banners/iPhone6-1140x380.jpg" alt="Chania" id="carouselimg">
+      <img src="<?= base_url() . 'assets/images/logitech-banner.jpg'; ?>" alt="Logitech" id="carouselimg">
 
     </div>
 
     <div class="item">
-      <img src="https://demo.opencart.com/image/cache/catalog/demo/banners/MacBookAir-1140x380.jpg" alt="Flower" id="carouselimg">
+      <img src="<?= base_url() . 'assets/images/dell-banner.jpg'; ?>" alt="Dell" id="carouselimg">
 
     </div>
 

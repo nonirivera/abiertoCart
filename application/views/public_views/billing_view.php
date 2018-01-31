@@ -78,28 +78,28 @@ endif;
 			<?php endforeach; ?>
 		</div>
 		<div class="col-md-3">
+			<div class="panel panel-success">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Information</h3>
+			  </div>
+			  <div class="panel-body">
+			    <p>Please review your billing and shipping information before proceeding</p>
+			    <p>You can have your order delivered to another destination by editing the shipping form</p>
+			    <p>For now, we are only offering pickup and COD as mode of payment</p>
+			  </div>
+			</div>
+			<div class="well">
+				Total Order Amount: <b><?= number_format($grand_total, 2); ?></b>
+			</div>
 			<div align="center">
 				<input type="hidden" name="total_amount" value=<?php echo $grand_total; ?> />
 				<button class="btn btn-primary btn-block btn-lg" type="submit" onclick="return confirm('Submit this order?')">
-			  		Total Amount: <?php echo number_format($grand_total,2); ?><br>
 			  		Place Order
 			  	</button>
 				<!-- <input type="submit" name="submit_order" value="Place Order" class="btn btn-primary btn-block btn-lg" onclick="return confirm('Submit this order?')"> -->
 			</form>
 			</div>
 			 <p></p>
-			<div class="panel panel-success">
-			  <div class="panel-heading">
-			    <h3 class="panel-title">Information</h3>
-			  </div>
-			  <div class="panel-body">
-			    <p>Some random crap here.</p>
-			    <p>Some random crap here.</p>
-			    <p>Some random crap here.</p>
-			    <p>Some random crap here.</p>
-			    <p>Some random crap here.</p>
-			  </div>
-			</div>
 		</div>
 	</div>
 </div>

@@ -108,4 +108,40 @@ class Customers extends CI_Controller{
 		$this->load->view('public_includes/template', $data);
 	}
 
+	public function accountUpdate(){
+		$data = array('success'=>false, 'messages'=>array());
+
+		$this->form_validation->set_rules('firstname', 'First Name', 'trim|required|min_length[4]|max_length[50]');
+		$this->form_validation->set_rules('lastname', 'Last Name', 'trim|required|min_length[4]|max_length[50]');
+		$this->form_validation->set_rules('mobilenum', 'Mobile Number', 'trim|required|min_length[11]|max_length[15]');
+		$this->form_validation->set_rules('landlinenum', 'Landline Number', 'trim|min_length[7]|max_length[15]');
+		$this->form_validation->set_rules('address1', 'Address 1', 'trim|required|min_length[10]|max_length[200]');
+		$this->form_validation->set_rules('address2', 'Address 2', 'trim|min_length[10]|max_length[200]');
+		$this->form_validation->set_rules('city', 'City', 'trim|required|min_length[4]|max_length[200]');
+		$this->form_validation->set_rules('postalcode', 'Postal Code', 'trim|min_length[4]|max_length[50]');
+		$this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');
+
+		if ($this->form_validation->run()) {
+			$items = array(
+					'c_first_name' => ucfirst($this->input->post('firstname')),
+					'c_last_name' => ucfirst($this->input->post('lastname')),
+					'c_mobile_num' => $this->input->post('mobilenum'),
+					'c_landline_num' => $this->input->post('landlinenum'),
+					'c_address1' => ucfirst($this->input->post('address1')),
+					'c_address2' => ucfirst($this->input->post('address2')),
+					'c_city' => ucfirst($this->input->post('city')),
+					'c_postal_code' => $this->input->post('postalcode'),
+				);
+			$data['query'] = $this->customer_model->update('customers',$items, 'c_id', $this->input->post('c_id'));
+			$data['success'] = true;
+		}
+		else {
+			foreach ($_POST as $key => $value) {
+				$data['messages'][$key] = form_error($key);
+			}
+		}
+
+		echo json_encode($data);
+	}
+
 }
