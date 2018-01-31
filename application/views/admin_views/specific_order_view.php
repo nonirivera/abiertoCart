@@ -3,12 +3,15 @@
 		<div class="panel panel-primary">
 		  <div class="panel-heading">
 			<?php foreach($query as $row): ?>
-		    <h3 class="panel-title">Order Serial ORD-N-<?= $row->serialnum; ?></h3>
+		    <h3 class="panel-title">Order Serial #<?= date('Y', strtotime($row->date)) . $row->serialnum; ?></h3>
 		  </div>
 		  <div class="panel-body">
 		    <div class="col-md-6">
 				<div class="well">
+				<!-- FORM -->
+				<form action="<?= base_url() . 'admin/updateOrder'; ?>" method="post">
 					<?php $date = strtotime($row->date); ?>
+					<input type="hidden" name="serialnum" value="<?= $row->serialnum;?>">
 					<p class="lead"><i>Made by: <?= $row->order_customer_username; ?> | <a href="mailto:<?= $row->email; ?>"><?= $row->email; ?></a></i> </p>
 					<p class="text-success"><strong>Order Date: <?= date("F j, Y",$date); ?></strong></p>
 					<p class="text-primary"><strong>Total Amount: <?= $row->total_amount; ?></strong></p>
@@ -31,7 +34,8 @@
 			    	<?php else: ?>
 			    		<button class="btn btn-primary btn-xs">Update</button>
 			    	<?php endif; ?>
-			    <?php endforeach; ?>		
+			    <?php endforeach; ?>
+			    </form>		
 				</div>   	
 		    </div>
 		    <div class="col-md-6">

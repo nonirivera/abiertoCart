@@ -10,7 +10,7 @@
         <div align="center"><h3 class="panel-title"><i class="fa fa-shopping-cart fa-5x aria-hidden="true"></i></h3></div>
       </div>
       <div class="panel-body">
-        <p class="text-success pull-right">See all orders.  <a href=""><i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i></a></p>
+        <p class="text-success pull-right">See all orders.  <a href="<?= base_url() . 'admin/orders/';?>"><i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i></a></p>
       </div>
     </div> 
   </div>
@@ -40,7 +40,7 @@
         <div align="center"><h3 class="panel-title"><i class="fa fa-phone-square fa-5x" aria-hidden="true"></i></h3></div>
       </div>
       <div class="panel-body">
-        <p class="text-default pull-right">See unread messages  <a href="<?= base_url() .'admin/messages'; ?>"><i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i></a></p>
+        <p class="text-default pull-right">See contact form messages  <a href="<?= base_url() .'admin/messages'; ?>"><i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i></a></p>
       </div>
     </div>      
   </div>

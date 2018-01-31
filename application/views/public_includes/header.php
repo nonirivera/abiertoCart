@@ -24,9 +24,9 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="<?= base_url() . 'shop/';?>"><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="<?= base_url() . 'shop/about';?>"><i class="fa fa-info"></i> About</a></li>
-        <li><a href="<?= base_url() . 'shop/contact';?>"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</a></li>
+        <li><a href="<?= base_url() . 'shop/';?>">Home</a></li>
+        <li><a href="<?= base_url() . 'shop/about';?>">About</a></li>
+        <li><a href="<?= base_url() . 'shop/contact';?>">Contact Us</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
 		<li class="dropdown">
@@ -59,7 +59,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<a href="#"><img src="<?= base_url() . 'assets/images/logo.png'; ?>" alt="abiertocart" id="clogo"/></a>
+				<a href="<?= base_url() . 'shop/'; ?>"><img src="<?= base_url() . 'assets/images/logo.png'; ?>" alt="abiertocart" id="clogo"/></a>
 			</div>
 			<div class="col-md-5">
 				<form action="<?= base_url().'shop/search'; ?>" method="post">
@@ -88,7 +88,7 @@
 
 <!-- categories menu -->
 <div class="container">
-	<nav id="menu" class="navbar">
+	<nav id="menu" class="navbar navbar-inverse">
 		<div class="navbar-header"><span id="category" class="visible-xs"></span>
 		<button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">View Categories <i class="fa fa-bars"></i></button>
 		</div>
@@ -101,7 +101,6 @@
 		</div>
 	</nav>
 </div>
-<hr>
 <!-- Login modal -->
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
 <div class="modal-dialog">

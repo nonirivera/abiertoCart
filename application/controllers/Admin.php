@@ -29,6 +29,7 @@ class Admin extends CI_Controller{
 
 	// **************************** CUSTOMERS ROUTES
 	public function customers(){
+		$data['su'] = $this->su;
 		$data['title'] = 'abrietoCart Customers List';
 		$data['header'] = 'List of Customers';
 		$data['main_content'] = 'admin_views/customers_view';
@@ -43,11 +44,17 @@ class Admin extends CI_Controller{
 		$this->load->view('admin_includes/template', $data);
 	}
 
+	public function delete_customer($id){
+		$this->admin_model->delete_item('customers','c_id', $id);
+		redirect('admin/customers');
+	}		
+
 
 	// **************************** CATEGORIES ROUTES
 	public function categories(){
 		$data['su'] = $this->su;
 		$data['title'] = 'Categories List';
+		$data['header'] = 'Categories List';
 		$data['query'] = $this->store_model->get_list('categories');
 		$data['main_content'] = 'admin_views/categories_view';
 		$this->load->view('admin_includes/template', $data);
@@ -126,6 +133,7 @@ class Admin extends CI_Controller{
 	// list
 	public function products(){
 		$data['title'] = 'Products List';
+		$data['header'] = 'Products List';
 		$data['query'] = $this->store_model->get_list('products', 'categories', 'brands', 
 		 	'products.category_id', 'categories.category_id', 
 		 	'products.brand_id', 'brands.brand_id');
@@ -257,6 +265,12 @@ class Admin extends CI_Controller{
 		$data['prods'] = $this->admin_model->get_order('order_detail', 'products', 'order_detail.productid', 'products.product_id', $id, 'order_detail.orderid');
 		$data['main_content'] = 'admin_views/specific_order_view';
 		$this->load->view('admin_includes/template', $data);
+	}
+
+	public function updateOrder($id){
+		$items = array('status' => $this->input->post('status'));
+		$data['query'] = $this->admin_model->update('orders', $items, 'serialnum', $this->input->post('serialnum'));
+		redirect('admin/orders');
 	}
 
 }

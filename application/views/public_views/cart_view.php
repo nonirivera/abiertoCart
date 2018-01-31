@@ -21,12 +21,18 @@ function clear_cart(){
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-9">
 			<?php
 			if(!$this->cart->contents()): ?>
-				<h1>Your Cart is empty.</h1>
-				<a href="<?= base_url() . 'shop/'; ?>" class="btn btn-default btn-lg">Go Back Shopping</a>
+			<br>
+				<div style="text-align: center;">
+					<i class="fa fa-shopping-cart fa-5x" aria-hidden="true"></i>
+					<h2>Your shopping cart is empty</h2>
+					<p>You can click the button below to go back to products page or do a quick search by typing the name of the product on the search bar.</p>
+					<br>
+					<a href="<?= base_url() . 'shop/'; ?>" class="btn btn-default btn-lg">Go Back Shopping</a>
+				</div>
 			<?php else: ?>
+		<div class="col-md-9">
 				<div class="progress progress-striped active">
 				  <div class="progress-bar" style="width: 33%"></div>
 				</div>

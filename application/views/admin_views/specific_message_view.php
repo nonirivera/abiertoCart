@@ -26,7 +26,6 @@
 	      <div class="col-lg-10 col-lg-offset-2">
 	        <?php if($row->has_read == 0): ?>
 	        	<input type="radio" name="cm_has_read" id="cm_has_read" value="1" checked="">Mark as Read &nbsp;
-	        	<input type="radio" name="cm_has_read" id="cm_has_read" value="0">Ignore &nbsp;
 		        <button type="submit" class="btn btn-primary" id="updateBtn">Save Change</button>
 		    <?php else: ?>
 		    	&nbsp;

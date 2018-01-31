@@ -52,7 +52,6 @@
         <button type="button" class="btn btn-default btn-lg" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i>  No</button>
       </div>
     </div>
-
   </div>
 </div>
 

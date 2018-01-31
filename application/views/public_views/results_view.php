@@ -22,7 +22,16 @@
       </div>
  	<?php endforeach; ?>
  	<?php else: ?>
-	<h1>No Result</h1>
+    <br>
+	<div style="text-align: center;">
+    <div class="container">
+    <i class="fa fa-exclamation-triangle fa-5x" aria-hidden="true"></i>
+    <h2>No Result</h2>
+    <br>
+    <p><strong>Oops, seems like the product you are searching for is not available.</strong></p>
+    <p>Make sure to type either the product name or its description correctly.</p> 
+    </div>
+  </div>
 <?php endif; ?>	     
 
   </div>

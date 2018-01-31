@@ -39,17 +39,22 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a style="color: red;" href="<?= base_url () . 'admin/'; ?>"><i class="fa fa-tachometer" aria-hidden="true"></i>
- Dashboard</a></li>
-            <li><a style="color: green;" href="#"><i class="fa fa-wrench" aria-hidden="true"></i>
- Settings</a></li>
-            <li><a style="color: blue;" href="#"><i class="fa fa-info-circle" aria-hidden="true"></i>
- Help</a></li>
-            <li><a style="color: orange;" href="<?= base_url() . 'shop/'; ?>" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i>
- Public Site</a></li>
+            <li><a style="color: red;" href="<?= base_url () . 'admin/'; ?>"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
+            <li><a style="color: orange;" href="<?= base_url() . 'shop/'; ?>" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i> Public Site</a></li>
             <li class="dropdown">
-              <a style="color: violet;" href="#" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i>
- Account
+              <a style="color: green;" href="#" data-toggle="dropdown"><i class="fa fa-wrench" aria-hidden="true"></i> Settings
+                <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="<?= base_url() . 'settings/about'; ?>"><i class="fa fa-check-square-o" aria-hidden="true"></i>
+ About Page</a></li>
+                <li><a href="<?= base_url() . 'settings/policy'; ?>"><i class="fa fa-circle-o-notch" aria-hidden="true"></i>
+ Privacy Policy</a></li>
+                <li><a href="<?= base_url() . 'settings/help_info'; ?>"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+ Registration Panel (Help)</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a style="color: violet;" href="#" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> Account
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
                 <li><a href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> My Profile</a></li>

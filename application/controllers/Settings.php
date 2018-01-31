@@ -30,7 +30,7 @@ class Settings extends CI_Controller{
 
 	public function help_info(){
 		$data['title'] = 'abrietoCart Privacy Policy';
-		$data['header'] = 'Edit Privacy Policy';
+		$data['header'] = 'Edit Registration Info';
 		$data['query'] = $this->settings_model->get_where('information','i_identifier','help_info');
 		$data['main_content'] = 'admin_views/page_cms_view';
 		$this->load->view('admin_includes/template', $data);

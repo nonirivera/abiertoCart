@@ -31,6 +31,7 @@ class Store_model extends MY_Model{
 	}
 
 	public function getLimited($num){
+		$this->db->order_by('product_id','desc'); // specific identifier as of the moment, might be used in other table(s)
 		$this->db->limit($num);
 		$query = $this->db->get('products');
 		return $query->result();

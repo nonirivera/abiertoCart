@@ -1,6 +1,6 @@
 <div class="container">
   <div align="center">
-    <h1>Featured Brands</h1>
+    <h3>Featured Brands</h3>
   </div>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
@@ -40,10 +40,10 @@
   </a>
 </div>  
 </div>
-<p></p>
+<br>
 <div class="container">
   <div align="center">
-    <h1>Our Latest Products</h1>
+    <h3>Our Latest Products</h3>
   </div>
   <!-- display featured -->
   <div class="row text-center" style="display:flex; flex-wrap: wrap;">

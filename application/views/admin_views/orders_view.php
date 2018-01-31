@@ -19,12 +19,18 @@
 	<?php else: ?>
 		<tr class="success">
 <?php endif; ?>
-	      <td>ORD-N-<?= $row->serialnum; ?></td>
+	      <td><?= date('Y', strtotime($row->date)) . $row->serialnum; ?></td>
 	      <td><?= $row->date; ?></a></td>
 	      <td><?= $row->total_amount; ?></td>
 	      <td><?= $row->mode_of_payment; ?></td>
 	      <td><?= $row->status; ?></td>
-	      <td><a href="<?= base_url() . 'admin/order/' . $row->serialnum;?>" class="btn btn-default btn-lg">View Details</a></td>
+	      <td>
+        <?php if($row->status == 'Completed'): ?>
+        <a href="<?= base_url() . 'admin/order/' . $row->serialnum;?>" class="btn btn-primary btn-sm" target="_blank">Receipt</a>
+        <?php else: ?>
+        <a href="<?= base_url() . 'admin/order/' . $row->serialnum;?>" class="btn btn-default btn-sm">View Details</a>
+        <?php endif; ?> 
+        </td>
 	    </tr>
 <?php endforeach; ?>
   </tbody>
