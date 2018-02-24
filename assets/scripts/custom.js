@@ -3,7 +3,9 @@ $(document).ready(function() {
 	$('[data-toggle="tooltip"]').tooltip();
 
 	// datatables
-	$('#tableView').DataTable();
+	$('#tableView').DataTable({
+        "aaSorting": [[ 0, "desc" ]]
+    });
 
     // tinymce
     tinymce.init({

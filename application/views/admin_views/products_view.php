@@ -6,6 +6,11 @@
   <?php endif; ?>
   <a href="#" onclick='location.reload(true); return false;' class="btn btn-sm btn-default"><i class="fa fa-refresh" aria-hidden="true"></i> Refresh List</a>
 </div>
+<div class="alert alert-success alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <?php echo $this->session->flashdata('true'); ?>
+</div>
+
 <div class="table-responsive">
 <table id="tableView" class="table table-bordered table-striped table-hover">
   <thead>

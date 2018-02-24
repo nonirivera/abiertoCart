@@ -1,3 +1,6 @@
+<div class="well">
+  <a href="#" onclick='location.reload(true); return false;' class="btn btn-sm btn-default"><i class="fa fa-refresh" aria-hidden="true"></i> Refresh List</a>
+</div>
 <div class="table-responsive">
 <table id="tableView" class="table table-bordered table-striped table-hover">
   <thead>

@@ -125,7 +125,7 @@ $('#form-user').submit(function(e) {
 		success: function(response) {
 			if (response.success == true) {
 				// show success message, remove error class, and disable form inputs
-				$('#the-message').append('<div class="alert alert-success">You have been successfully registered! You may proceed by logging into your account here: <a href="<?php echo base_url() . 'shop/login';?>" id="panelHeadLink">Login</a></div>');
+				$('#the-message').append('<div class="alert alert-success">You have been successfully registered! You may proceed by logging into your account here: <a href="#" data-toggle="modal" data-target="#login-modal" id="panelHeadLink">Login</a></div>');
 				$('.form-group').removeClass('has-error')
 								.removeClass('has-success');
 				$('.text-danger').remove();

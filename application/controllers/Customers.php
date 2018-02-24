@@ -144,4 +144,10 @@ class Customers extends CI_Controller{
 		echo json_encode($data);
 	}
 
+	public function cancelOrder($id)
+	{
+		$this->customer_model->delete_item('orders', 'serialnum', $id);
+		redirect('customers/account');
+	}
+
 }

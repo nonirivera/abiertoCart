@@ -203,6 +203,24 @@ class Admin extends CI_Controller{
 		echo json_encode($data);
 	}
 
+	public function update_product($id)
+	{
+		$items = array(
+			'product_id' => $this->input->post('product_id'),
+			'product_name' => $this->input->post('product_name'),
+			'product_description' => $this->input->post('product_description'),
+			'category_id' => $this->input->post('product_category'),
+			'product_price' => $this->input->post('product_price'),
+			'product_quantity' => $this->input->post('product_quantity'),
+			'product_code' => $this->input->post('product_code'),
+			'brand_id' => $this->input->post('product_brand'),
+			'product_image' => $this->input->post('product_image')
+		);
+		$data['query'] = $this->admin_model->update('products', $items, 'product_id', $this->input->post('product_id'));
+		$this->session->set_flashdata('true', 'Product successfully updated!');
+		redirect('admin/products', $data);
+	}
+
 	public function delete_product($id){
 		$this->admin_model->delete_item('products','product_id', $id);
 		redirect('admin/products');
@@ -272,5 +290,6 @@ class Admin extends CI_Controller{
 		$data['query'] = $this->admin_model->update('orders', $items, 'serialnum', $this->input->post('serialnum'));
 		redirect('admin/orders');
 	}
+
 
 }

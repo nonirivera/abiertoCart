@@ -29,13 +29,37 @@
                   <td><a href="<?= base_url() . 'invoice/view/' . $ord->serialnum; ?>" target="_blank" data-toggle="tooltip" data-placement="right" title="View Invoice">ORD - <?= $ord->serialnum; ?></a></td>
                   <td><?= date("F d, Y", strtotime($ord->date)); ?></td>
                   <td> ₱ <?= $ord->total_amount; ?></td>
-                  <td><?= $ord->status; ?></td>
+                  <td><?= $ord->status; ?> 
+                    <?php if($ord->status === 'Open'): ?>
+                      <a href="" data-toggle="modal" data-target="#myModal<?php echo $ord->serialnum; ?>"><i class="fa fa-times" style="color:red"></i></a>
+                    <?php endif; ?>
+                  </td>
                 </tr>
+<!--- confirmation modal for cancelling order -->
+<div id="myModal<?php echo $ord->serialnum; ?>" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cancel Order</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure want to cancel this order? </p>
+      </div>
+      <div class="modal-footer">
+          <a href="<?= base_url('customers/cancelOrder').'/'.$ord->serialnum; ?>" class="btn btn-danger btn-lg"><i class="fa fa-check-circle" aria-hidden="true"></i> Yes</a>
+        <button type="button" class="btn btn-default btn-lg" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i>  No</button>
+      </div>
+    </div>
+  </div>
+</div>  
+<!--- modal end -->                
                 <?php endforeach; ?>
               </tbody>
             </table>
           </div>
           <!-- end -->
+
         </div>
       </div>
     </div>

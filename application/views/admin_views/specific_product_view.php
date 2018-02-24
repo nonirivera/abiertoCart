@@ -13,9 +13,10 @@ foreach($brands as $br):
 endforeach;
 ?>
 <?php foreach($query as $row): ?>
-<form class="form-horizontal" id="productForm">
+<form class="form-horizontal" id="productForm" action="<?= base_url() . 'admin/update_product/'.$row->product_id; ?>" method="post">
   <fieldset>
     <legend>View Product</legend>
+    <input type="hidden" name="product_id" value="<?= $row->product_id; ?>">
     <div class="form-group">
       <label for="product_name" class="col-lg-2 control-label">Name</label>
       <div class="col-lg-10">
@@ -66,12 +67,13 @@ endforeach;
       <label for="product_name" class="col-lg-2 control-label">Image</label>
       <div class="col-lg-4">
         <img class="img-responsive img-rounded" src="<?= '../../' .$row->product_image; ?>">
+        <input type="hidden" name="product_image" value="<?= $row->product_image; ?>">
       </div>
-      <div class="col-lg-6">
+      <!-- <div class="col-lg-6">
         <label class="btn btn-info btn-file">
           <?php echo form_upload('userfile','asdsd'); ?>
         </label>
-      </div>
+      </div> -->
     </div>
     <hr>
     <div class="form-group">

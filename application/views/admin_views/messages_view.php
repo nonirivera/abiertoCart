@@ -1,3 +1,6 @@
+<div class="well">
+  <a href="#" onclick='location.reload(true); return false;' class="btn btn-sm btn-default"><i class="fa fa-refresh" aria-hidden="true"></i> Refresh List</a>
+</div>
 <div class="alert alert-dismissible alert-info">
   <button type="button" class="close" data-dismiss="alert">&times;</button>
   <h4>Heads up!</h4>
@@ -31,7 +34,7 @@
       </td>
       <td>
         <a href="<?= base_url() . 'admin/view_message/' . $row->cm_id; ?>" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i> View Message</a>
-        <?php if($su == 1): ?>
+        <?php if($su == 1 && $row->has_read == 1): ?>
          <a href=""  class="btn btn-danger" data-toggle="modal" data-target="#myModal<?php echo $row->cm_id; ?>"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Delete</a>
       <?php endif; ?>
       </td>
