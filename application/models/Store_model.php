@@ -4,12 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Store_model extends MY_Model{
 
 	public $table = 'products';
-	public $primary_key = 'product_id';
+	private $key = 'product_id';
 
 	public function get_product($id = NULL, $table = NULL, $table2 = NULL, $table3= NULL, $prim1 = NULL, $prim2 = NULL, $prim3 = NULL, $prim4 = NULL){
 		$this->db->select('*');
 		$this->db->from($table);
-		$this->db->where('product_id', $id);
+		$this->db->where($this->key, $id);
 
 		$this->db->join($table2, $prim1 .'=' . $prim2);
 		$this->db->join($table3, $prim3 . '=' . $prim4);
@@ -31,7 +31,7 @@ class Store_model extends MY_Model{
 	}
 
 	public function getLimited($num){
-		$this->db->order_by('product_id','desc'); // specific identifier as of the moment, might be used in other table(s)
+		$this->db->order_by($this->key,'desc'); // specific identifier as of the moment, might be used in other table(s)
 		$this->db->limit($num);
 		$query = $this->db->get('products');
 		return $query->result();

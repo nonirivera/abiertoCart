@@ -18,7 +18,9 @@
 		body {
 		  padding-top: 40px;
 		  padding-bottom: 40px;
-		  background-color: #f0f0f0;
+		  background: #f79d00;  /* fallback for old browsers */
+		  background: -webkit-linear-gradient(to right, #64f38c, #f79d00);  /* Chrome 10-25, Safari 5.1-6 */
+		  background: linear-gradient(to right, #64f38c, #f79d00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 		}
 
 		.container{

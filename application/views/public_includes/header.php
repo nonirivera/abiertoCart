@@ -14,13 +14,13 @@
 	</head>
 	<body>
 <!--- navbar-->
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" id="publicNav">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
         More <i class="fa fa-caret-square-o-down" aria-hidden="true"></i>
-      </button>  
+      </button>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
@@ -39,7 +39,7 @@
             	<?php endif; ?>
             	 <b class="caret"></b>
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" id="headerDropDown">
             <?php if($this->session->userdata('is_logged_in')): ?>
                 <li><a href="<?= base_url() . 'customers/account'; ?>"><i class="fa fa-user-secret" aria-hidden="true"></i> My Account</a></li>
                 <li><a href="<?= base_url() . 'shop/logout'; ?>"><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a></li>
@@ -58,22 +58,22 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4">
-				<a href="<?= base_url() . 'shop/'; ?>"><img src="<?= base_url() . 'assets/images/logo.png'; ?>" alt="abiertocart" id="clogo"/></a>
+			<div class="col-md-3">
+				<img src="<?= base_url() . 'assets/images/logo.png'; ?>" alt="abiertocart" id="clogo" class="img-responsive" />
 			</div>
 			<div class="col-md-5">
 				<form action="<?= base_url().'shop/search'; ?>" method="post">
 					<div class="form-group">
 					  <div class="input-group">
-					    <span class="input-group-addon"><i class="fa fa-search"></i></span>
 					    <input type="text" class="form-control" name="search" placeholder="Product Name / Code / Description">
 					    <span class="input-group-btn">
-					      <button class="btn btn-info" type="submit">Search</button>
+					      <button class="btn btn-info" type="submit"><i class="fa fa-search"></i></button>
 					    </span>
 					  </div>
 					</div>
 				</form>
 			</div>
+			<div class="col-md-1"></div>	
 			<div class="col-md-3 pull-right">
 				<ul class="nav nav-pills" role="tablist">
 				  <li role="presentation" class="active">

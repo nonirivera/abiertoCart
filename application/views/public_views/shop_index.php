@@ -1,7 +1,6 @@
 <div class="container">
-  <div align="center">
-    <h3>Featured Brands</h3>
-  </div>
+  <h3 id="homeH3">Featured Brands</h3>
+  <hr>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -38,13 +37,15 @@
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>  
+</div> 
+
 </div>
 <br>
+<p></p>
+<br>
 <div class="container">
-  <div align="center">
-    <h3>Our Latest Products</h3>
-  </div>
+  <h3 id="homeH3">Our Latest Products</h3>
+  <hr>
   <!-- display featured -->
   <div class="row text-center" style="display:flex; flex-wrap: wrap;">
   <?php foreach($query as $row): ?>
@@ -68,3 +69,4 @@
   <?php endforeach; ?>
   </div>
 </div>
+<br>
